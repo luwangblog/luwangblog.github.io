@@ -59,31 +59,35 @@
   };
 </script>
 
-  <meta name="description" content="Luwang&apos;s Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wallleap">
-<meta property="og:url" content="https://wallleap.top/index.html">
+  <meta name="description" content="Hexo+GitHub Pages搭建博客">
+<meta name="keywords" content="Hexo+GitHub Pages搭建博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac使用Hexo和GitHub搭建博客(2)--优化配置">
+<meta property="og:url" content="https://wallleap.top/2019/08/24/mac-blog2/index.html">
 <meta property="og:site_name" content="wallleap">
-<meta property="og:description" content="Luwang&apos;s Blog">
+<meta property="og:description" content="Hexo+GitHub Pages搭建博客">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg">
+<meta property="og:updated_time" content="2019-09-22T02:08:12.255Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wallleap">
-<meta name="twitter:description" content="Luwang&apos;s Blog">
-  <link rel="canonical" href="https://wallleap.top/">
+<meta name="twitter:title" content="Mac使用Hexo和GitHub搭建博客(2)--优化配置">
+<meta name="twitter:description" content="Hexo+GitHub Pages搭建博客">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg">
+  <link rel="canonical" href="https://wallleap.top/2019/08/24/mac-blog2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>wallleap</title>
+  <title>Mac使用Hexo和GitHub搭建博客(2)--优化配置 | wallleap</title>
   
 
 
@@ -332,13 +336,14 @@
 
           <div id="content" class="content">
             
+
   <div id="posts" class="posts-expand">
-        <article itemscope itemtype="http://schema.org/Article">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/19/web-HCL6/">
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/08/24/mac-blog2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="luwang">
@@ -350,9 +355,8 @@
       <meta itemprop="name" content="wallleap">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/19/web-HCL6/" class="post-title-link" itemprop="url">RIP配置</a>
+        <h1 class="post-title" itemprop="name headline">Mac使用Hexo和GitHub搭建博客(2)--优化配置
+
           
         </h1>
 
@@ -367,7 +371,7 @@
                 
               
 
-              <time title="Created: 2019-09-19 16:13:56" itemprop="dateCreated datePublished" datetime="2019-09-19T16:13:56+08:00">2019-09-19</time>
+              <time title="Created: 2019-08-24 20:21:59" itemprop="dateCreated datePublished" datetime="2019-08-24T20:21:59+08:00">2019-08-24</time>
             </span>
           
             
@@ -378,7 +382,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:28:53" itemprop="dateModified" datetime="2019-09-22T10:28:53+08:00">2019-09-22</time>
+                <time title="Modified: 2019-09-22 10:08:12" itemprop="dateModified" datetime="2019-09-22T10:08:12+08:00">2019-09-22</time>
               </span>
             
           
@@ -388,7 +392,14 @@
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/“网络”/" itemprop="url" rel="index"><span itemprop="name">“网络”</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
 
                 
                 
@@ -397,206 +408,15 @@
           
 
           
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@2.1/img/banner/banner5.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h2><p>配置RIP<br>说明：<br>1.交换机和三层交换机配置RIP<br>2.左边静态地址、右边DHCP<br>3.左边除了DHCP，昨天的都配上</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/19/web-HCL6/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/19/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/19/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-19 14:15:08" itemprop="dateCreated datePublished" datetime="2019-09-19T14:15:08+08:00">2019-09-19</time>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
             </span>
           
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:05:24" itemprop="dateModified" datetime="2019-09-22T10:05:24+08:00">2019-09-22</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/19/hello-world/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/18/web-HCL4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/18/web-HCL4/" class="post-title-link" itemprop="url">DHCP配置(续)--DHCP中继</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-18 16:14:16" itemprop="dateCreated datePublished" datetime="2019-09-18T16:14:16+08:00">2019-09-18</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:09:31" itemprop="dateModified" datetime="2019-09-22T10:09:31+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
+            <div class="post-description">Hexo+GitHub Pages搭建博客</div>
           
 
         </div>
@@ -616,853 +436,175 @@
 
           </div>
         </div>
-          <blockquote>
-<p>实验目的：DHCP中继</p>
+        <h2 id="一、修改-config-yml"><a href="#一、修改-config-yml" class="headerlink" title="一、修改_config.yml"></a>一、修改_config.yml</h2><p>搭建博客的时候顺便改了下基本的配置，现在来看下这些配置修改</p>
+<a id="more"></a>
+
+<blockquote>
+<p> ~/blog/_config.yml</p>
 </blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/18/web-HCL4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+<p>这个是全局的配置文件，<a href="../Mac使用Hexo和GitHub搭建博客-1/index.html">上一个博客</a>已经讲的很清楚了，这里不再赘述<br>由于需要用主题3-hexo高亮代码，将这里的高亮渲染关闭</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">    enable: false</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/18/web-HCL5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/18/web-HCL5/" class="post-title-link" itemprop="url">STP及VRRP配置</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-18 16:13:56" itemprop="dateCreated datePublished" datetime="2019-09-18T16:13:56+08:00">2019-09-18</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:09:39" itemprop="dateModified" datetime="2019-09-22T10:09:39+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/“网络”/" itemprop="url" rel="index"><span itemprop="name">“网络”</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h2><p>1、Vrrp<br>2、Stp<br>3、能用DHCP自动获取IP<br>4、能相互ping通</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/18/web-HCL5/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/15/book1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/15/book1/" class="post-title-link" itemprop="url">书单1--平凡的世界</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-15 19:32:39" itemprop="dateCreated datePublished" datetime="2019-09-15T19:32:39+08:00">2019-09-15</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:07:06" itemprop="dateModified" datetime="2019-09-22T10:07:06+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/阅读/" itemprop="url" rel="index"><span itemprop="name">阅读</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=46b93e4b7d1ed21b79c929e39555baf9/14ce36d3d539b600fbdea00ee950352ac65cb773.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <p>很长的一部著作，算是看过最长的了，很接地气的描写，故事一句话概括的话，应该算是：平凡青年的奋斗史。所以是不是应该把书名改为奋斗呢？所以是不是有很多这样的书呢？所以这为什么能让那么多人为之热血呢？我是带着崇拜并质疑的心态来阅读的，似乎没有能迅速找到答案，所以我便闭卷考试似的来回忆，梳理，总结，感悟，看能不能找到答案。<br>回忆三本书的故事，主人公应该是孙家一行人，衍生出来的左右旁支，亲朋好友也生存于其中；应该是黄土高原的背景，时间开始是三年自然灾害之后历时文革，改革开放这样的时间段，孙家算是几代贫农，但为人忠厚，在这样的村子里和很多贫下中农一样的活着，但是这样的孙玉厚，当家人，有着不一样的眼光，就是培养了自己的弟弟和两子一女上学，弟弟 后来成为了村里的党政管理人员，但对大哥确实不够感恩。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/15/book1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/12/web-HCL3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/12/web-HCL3/" class="post-title-link" itemprop="url">HCL配置(三)–-DHCP配置</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-12 15:42:43" itemprop="dateCreated datePublished" datetime="2019-09-12T15:42:43+08:00">2019-09-12</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:09:19" itemprop="dateModified" datetime="2019-09-22T10:09:19+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/华三/" itemprop="url" rel="index"><span itemprop="name">华三</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.8/img/banner/banner1.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <h1 id="HCL配置-三-–-DHCP配置"><a href="#HCL配置-三-–-DHCP配置" class="headerlink" title="HCL配置(三)–-DHCP配置"></a><font color="red">HCL配置(三)–-DHCP配置</font></h1><h2 id="一、任务"><a href="#一、任务" class="headerlink" title="一、任务"></a>一、任务</h2><blockquote>
-<p>在实验二的基础上(VLAN10、20、30、40内的主机之间互ping成功)实现用DHCP给各vlan内主机自动分配地址</p>
+<blockquote>
+<p>~/blog/themes/3-hexo/_config.yml<br>这个是主题的配置文件，仅给出需要修改的地方</p>
 </blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/12/web-HCL3/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/11/web-HCL2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/11/web-HCL2/" class="post-title-link" itemprop="url">HCL配置(二)--VLAN间通信</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-11 18:06:05" itemprop="dateCreated datePublished" datetime="2019-09-11T18:06:05+08:00">2019-09-11</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:09:08" itemprop="dateModified" datetime="2019-09-22T10:09:08+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/华三/" itemprop="url" rel="index"><span itemprop="name">华三</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <h1 id="HCL配置-二-–VLAN间通信"><a href="#HCL配置-二-–VLAN间通信" class="headerlink" title="HCL配置(二)–VLAN间通信"></a><font color="red">HCL配置(二)–VLAN间通信</font></h1><h2 id="一、任务"><a href="#一、任务" class="headerlink" title="一、任务"></a><font color="orange">一、任务</font></h2><blockquote>
-<p>Vlan间通信：<br>VLAN10、20、30、40内的主机之间互ping成功</p>
+<blockquote>
+<p>你的头像url  需要到～/blog/themes/3-hexo/source/img下把avatar.jpg替换为自己头像</p>
 </blockquote>
-<h2 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a><font color="orange">二、配置</font></h2><h3 id="一-通过三层交换机使用SVI实现通信"><a href="#一-通过三层交换机使用SVI实现通信" class="headerlink" title="(一)通过三层交换机使用SVI实现通信"></a><font color="pink">(一)通过三层交换机使用SVI实现通信</font></h3>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/11/web-HCL2/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">avatar: /img/avatar.jpg</span><br><span class="line">favicon: /img/avatar.jpg</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/09/web-HCL1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/09/web-HCL1/" class="post-title-link" itemprop="url">HCL配置(一)--ping通及Telnet</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-09 21:54:19" itemprop="dateCreated datePublished" datetime="2019-09-09T21:54:19+08:00">2019-09-09</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:08:56" itemprop="dateModified" datetime="2019-09-22T10:08:56+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/华三/" itemprop="url" rel="index"><span itemprop="name">华三</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <h1 id="HCL配置-一-–PCping通路由器及HostTelnet路由器"><a href="#HCL配置-一-–PCping通路由器及HostTelnet路由器" class="headerlink" title="HCL配置(一)–PCping通路由器及HostTelnet路由器"></a><font color="red">HCL配置(一)–PCping通路由器及HostTelnet路由器</font></h1><h2 id="一、任务"><a href="#一、任务" class="headerlink" title="一、任务"></a><font color="orange">一、任务</font></h2><blockquote>
-<ul>
-<li>命名R、2S为自己姓名首字母</li>
-<li>给设备配置时间</li>
-<li>PC能够Ping通R</li>
-<li>Host能telnet路由器</li>
-</ul>
+<blockquote>
+<p>博客位置，如果没有错误不需要修改</p>
 </blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/09/web-HCL1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
+<figure class="highlight plain"><figcaption><span>/```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 链接图标  将链接全部改为自己的即可</span><br><span class="line"> ```   csdn: https://me.csdn.net/qq_36949103</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>多作者模式  按需求填写</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">author:</span><br><span class="line">    on: false</span><br><span class="line">    authors:</span><br><span class="line">        author1: luwang</span><br><span class="line">        author2: wallleap</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>分类文章数、多级分类 按需启用 </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">category:</span><br><span class="line">    num: true # 分类显示文章数</span><br><span class="line">    sub: true # 开启多级分类</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>文末声明  改为自己的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">&gt; 打赏功能  需要到～/blog/themes/3-hexo/source/img下把weixin.jpg和alipay.jpg替换为自己微信和支付宝收款码</span><br></pre></td></tr></table></figure>
+
+<p>reward: true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; 其他的都有说明，自己看着修改就行</span><br><span class="line">&gt; 评论系统启用方式：[完美替代多说-gitment](https://yelog.org/2017/06/26/gitment/)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 二、优化页面</span><br><span class="line"></span><br><span class="line">### 1、主页 `~/blog/themes/3-hexo/indexs.md`</span><br><span class="line">由于是.md文件，因此可以按照正常的Markdown语法进行修改</span><br><span class="line"></span><br><span class="line">### 2、发布页模板 `~/blog/scaffolds/post.md`</span><br><span class="line"></span><br><span class="line">为了以后写博文方便，可以按照习惯修改模板，我的模板如下：</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>title: Mac使用Hexo和GitHub搭建博客(2)--优化配置<br>date: 1566649319000<br>tags:<br>    - tag1<br>    - tag2<br>categories:<br>    - category1<br>    - category2</p>
+<hr>
+<pre><code>标签改为多标签，分类为二级分类
+
+### 3、其他页面
+
+`hexo new page &quot;about&quot;`    
+还有category等都可以添加
+
+about页还需要修改主题_config.yml：
+![](https://cdn.jsdelivr.net/gh/wallleap/cdn@1.6/img/pic/mac-blog2/pic1.jpg)
+
+## 三、域名解析
+
+### 1、域名解析
+进入到购买域名的控制台，找到域名服务或解析服务
+![](https://cdn.jsdelivr.net/gh/wallleap/cdn@1.6/img/pic/mac-blog2/pic2.jpg)
+点击自己域名后的解析设置
+![](https://cdn.jsdelivr.net/gh/wallleap/cdn@1.6/img/pic/mac-blog2/pic3.jpg)
+点击添加记录
+![](https://cdn.jsdelivr.net/gh/wallleap/cdn@1.6/img/pic/mac-blog2/pic4.jpg)
+按照下图填写，注意记录值填`自己的用户名.github.io`
+![](https://cdn.jsdelivr.net/gh/wallleap/cdn@1.6/img/pic/mac-blog2/pic5.jpg)
+也可以再添加主机记录用www的，这样输入www也能访问
+![](https://cdn.jsdelivr.net/gh/wallleap/cdn@1.6/img/pic/mac-blog2/pic6.jpg)
+### 2、添加文件
+做完了解析工作还是不行的，需要在仓库加上CNAME文件，文件中只需要填写域名，比如我的：
+![](https://cdn.jsdelivr.net/gh/wallleap/cdn@1.6/img/pic/ mac-blog2/pic7.jpg)
+由于仓库中上传时会自动删除，因此放到`~/blog/source/`下
+## 四、评论系统
+
+上面主题配置中有提到过，但对于一个博客而言，评论部分是不可或缺的，因此将其单独说明。
+
+由于本人只用过`gitment`和`gitalk`，而个人感觉`gitalk`更好用一点，因此这里介绍`gitalk`使用，上面有`gitment`的教程链接
+首先打开主题配置文件(`~/blog/themes/3-hexo/_config.yml`),找到评论设置，将comment字段的on设为true，type设为gitalk。找到gitalk字段，添加on:true,其他的评论系统字段添加on:false.接着打开链接[https://github.com/settings/applications/new](https://github.com/settings/applications/new),登录GitHub账户，
+![](https://cdn.jsdelivr.net/gh/wallleap/cdn@1.6/img/pic/mac-blog2/pic8.jpg)
+
+注意callbalk URL一定要是自己域名的地址，接着点击绿色按钮，把Client ID和Client Secret复制到主题配置文件的gitalk字段相应位置，接着githubID和adminUser填自己的用户名即可,repo填博客的仓库(即`用户名.github.io`)
+![](https://cdn.jsdelivr.net/gh/wallleap/cdn@1.6/img/pic/mac-blog2/pic9.jpg)
+
+
+
+
+
+
+
+
+
+
+---
+ **文章汇总：**
+&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=#FFFF00&gt; Mac使用Hexo和GitHub搭建博客(1)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;kbd&gt;[go-&gt;](../mac-blog1/index.html)&lt;/kbd&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=#D1EEEE&gt;Mac使用Hexo和GitHub搭建博客(2)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;kbd&gt;[go-&gt;](../mac-blog2/index.html)&lt;/kbd&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=#C0FF3E&gt;Mac使用Hexo和GitHub搭建博客(3)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;kbd&gt;[go-&gt;](../mac-blog3/index.html)&lt;/kbd&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=#54FF9F&gt;Mac使用Hexo和GitHub搭建博客(4)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;kbd&gt;[go-&gt;](../mac-blog4/index.html)&lt;/kbd&gt;
+
+---</code></pre>
     </div>
 
     
     
     
-      <footer class="post-footer">
-          <div class="post-eof"></div>
+
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+      <div style="text-align:center;color: #ccc;font-size:14px;"> 
+        <p id="div-border-left-red">
+        <b>本文基于<a target="_blank" title="Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" href="http://creativecommons.org/licenses/by-sa/4.0/"> 知识共享署名-相同方式共享 4.0 </a>国际许可协议发布</b><br/>
+          <span>
+          <b>本文地址：</b><a href="/2019/08/24/mac-blog2/" title="Mac使用Hexo和GitHub搭建博客(2)--优化配置">https://wallleap.top/2019/08/24/mac-blog2/</a><br/><b>转载请注明出处，谢谢！</b>
+          </span>
+        </p>
+      </div>
         
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/09/web-HCL0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/09/web-HCL0/" class="post-title-link" itemprop="url">HCL的安装和使用</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-09 21:34:37" itemprop="dateCreated datePublished" datetime="2019-09-09T21:34:37+08:00">2019-09-09</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:08:40" itemprop="dateModified" datetime="2019-09-22T10:08:40+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/华三/" itemprop="url" rel="index"><span itemprop="name">华三</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg" itemprop="contentUrl">
+
+      <footer class="post-footer">
+          
             
           
-
+          <div class="post-tags">
+            
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+            
+              <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
+            
+              <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
+            
+              <a href="/tags/博客/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
+            
           </div>
-        </div>
-          <h2 id="HCL的安装"><a href="#HCL的安装" class="headerlink" title="HCL的安装"></a><font color="red">HCL的安装</font></h2>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/09/web-HCL0/#more" rel="contents">
-                Read more &raquo;
-              </a>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/24/mac-blog1/" rel="next" title="Mac使用Hexo和GitHub搭建博客(1)--搭建博客">
+                  <i class="fa fa-chevron-left"></i> Mac使用Hexo和GitHub搭建博客(1)--搭建博客
+                </a>
+              
             </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
+            <span class="post-nav-divider"></span>
 
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/08/28/DataStructure1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/28/DataStructure1/" class="post-title-link" itemprop="url">数据结构(1)-绪论</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
+            <div class="post-nav-prev post-nav-item">
               
-                
+                <a href="/2019/08/25/mac-blog3/" rel="prev" title="Mac使用Hexo和GitHub搭建博客(3)--发布文章">
+                  Mac使用Hexo和GitHub搭建博客(3)--发布文章 <i class="fa fa-chevron-right"></i>
+                </a>
               
-
-              <time title="Created: 2019-08-28 22:12:47" itemprop="dateCreated datePublished" datetime="2019-08-28T22:12:47+08:00">2019-08-28</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:07:29" itemprop="dateModified" datetime="2019-09-22T10:07:29+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编程/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" itemprop="contentUrl">
-            
-          
-
+            </div>
           </div>
-        </div>
-          数据结构预备知识
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/28/DataStructure1/">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
         
       </footer>
+    
 
   </div>
   
@@ -1470,13 +612,7 @@
   
   </article>
 
-    
   </div>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
 
 
           </div>
@@ -1495,6 +631,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -1507,6 +648,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、修改-config-yml"><span class="nav-number">1.</span> <span class="nav-text">一、修改_config.yml</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

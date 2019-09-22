@@ -59,31 +59,35 @@
   };
 </script>
 
-  <meta name="description" content="Luwang&apos;s Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wallleap">
-<meta property="og:url" content="https://wallleap.top/index.html">
+  <meta name="description" content="一、实验目的配置RIP说明：1.交换机和三层交换机配置RIP2.左边静态地址、右边DHCP3.左边除了DHCP，昨天的都配上">
+<meta name="keywords" content="RIP配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RIP配置">
+<meta property="og:url" content="https://wallleap.top/2019/09/19/web-HCL6/index.html">
 <meta property="og:site_name" content="wallleap">
-<meta property="og:description" content="Luwang&apos;s Blog">
+<meta property="og:description" content="一、实验目的配置RIP说明：1.交换机和三层交换机配置RIP2.左边静态地址、右边DHCP3.左边除了DHCP，昨天的都配上">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/wallleap/cdn@2.1/img/banner/banner5.jpg">
+<meta property="og:updated_time" content="2019-09-22T02:28:53.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wallleap">
-<meta name="twitter:description" content="Luwang&apos;s Blog">
-  <link rel="canonical" href="https://wallleap.top/">
+<meta name="twitter:title" content="RIP配置">
+<meta name="twitter:description" content="一、实验目的配置RIP说明：1.交换机和三层交换机配置RIP2.左边静态地址、右边DHCP3.左边除了DHCP，昨天的都配上">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/wallleap/cdn@2.1/img/banner/banner5.jpg">
+  <link rel="canonical" href="https://wallleap.top/2019/09/19/web-HCL6/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>wallleap</title>
+  <title>RIP配置 | wallleap</title>
   
 
 
@@ -332,12 +336,13 @@
 
           <div id="content" class="content">
             
+
   <div id="posts" class="posts-expand">
-        <article itemscope itemtype="http://schema.org/Article">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block home">
+  <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/19/web-HCL6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -350,9 +355,8 @@
       <meta itemprop="name" content="wallleap">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/19/web-HCL6/" class="post-title-link" itemprop="url">RIP配置</a>
+        <h1 class="post-title" itemprop="name headline">RIP配置
+
           
         </h1>
 
@@ -397,6 +401,14 @@
           
 
           
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
         </div>
       </header>
@@ -415,1054 +427,144 @@
 
           </div>
         </div>
-          <h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h2><p>配置RIP<br>说明：<br>1.交换机和三层交换机配置RIP<br>2.左边静态地址、右边DHCP<br>3.左边除了DHCP，昨天的都配上</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/19/web-HCL6/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+        <h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h2><p>配置RIP<br>说明：<br>1.交换机和三层交换机配置RIP<br>2.左边静态地址、右边DHCP<br>3.左边除了DHCP，昨天的都配上</p>
+<a id="more"></a>
+<h2 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h2><h3 id="１、拓扑"><a href="#１、拓扑" class="headerlink" title="１、拓扑"></a>１、拓扑</h3><p><img alt data-src="https://cdn.jsdelivr.net/gh/wallleap/cdn@2.1/img/pic/web-HCL6/pic1.png"><br>IP规划：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">VLAN10:192.168.10.253(S1) 192.168.10.254(S2) 192.168.10.1(虚拟IP)</span><br><span class="line">VLAN20:192.168.20.253(S1) 192.168.10.254(S2) 192.168.20.1(虚拟IP)</span><br><span class="line">VLAN30:192.168.30.253(S1) 192.168.10.254(S2) 192.168.30.1(虚拟IP)</span><br><span class="line">VLAN40:192.168.40.253(S1) 192.168.10.254(S2) 192.168.40.1(虚拟IP)</span><br><span class="line"></span><br><span class="line">VLAN50:192.168.50.1(S3)</span><br><span class="line">VLAN60:192.168.60.1(S3) </span><br><span class="line"></span><br><span class="line">VLAN70:192.168.70.253(S1)-R1:192.168.70.50</span><br><span class="line"></span><br><span class="line">VLAN80:192.168.80.254(S2)-R1:192.168.80.50</span><br><span class="line"></span><br><span class="line">VLAN90:192.168.90.1(S3)-R3:192.168.90.50</span><br><span class="line"></span><br><span class="line">R1:192.168.100.50-R2:192.168.100.51</span><br><span class="line"></span><br><span class="line">R2:192.168.110.51-R3:192.168.110.50</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/19/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/19/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-19 14:15:08" itemprop="dateCreated datePublished" datetime="2019-09-19T14:15:08+08:00">2019-09-19</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:05:24" itemprop="dateModified" datetime="2019-09-22T10:05:24+08:00">2019-09-22</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/19/hello-world/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/18/web-HCL4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/18/web-HCL4/" class="post-title-link" itemprop="url">DHCP配置(续)--DHCP中继</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-18 16:14:16" itemprop="dateCreated datePublished" datetime="2019-09-18T16:14:16+08:00">2019-09-18</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:09:31" itemprop="dateModified" datetime="2019-09-22T10:09:31+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <blockquote>
-<p>实验目的：DHCP中继</p>
+<h3 id="２、左边PC"><a href="#２、左边PC" class="headerlink" title="２、左边PC"></a>２、左边PC</h3><p>静态IP，手动配置<br><img alt data-src="https://cdn.jsdelivr.net/gh/wallleap/cdn@2.1/img/pic/web-HCL6/pic2.png"></p>
+<h3 id="３、右边PC"><a href="#３、右边PC" class="headerlink" title="３、右边PC"></a>３、右边PC</h3><p>DHCP，动态获取IP地址<br><img alt data-src="https://cdn.jsdelivr.net/gh/wallleap/cdn@2.1/img/pic/web-HCL6/pic3.png"></p>
+<h3 id="４、S４"><a href="#４、S４" class="headerlink" title="４、S４"></a>４、S４</h3><p>只需要配置接口、vlan即可　S５也是</p>
+<blockquote>
+<p>命名</p>
 </blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/18/web-HCL4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Huawei&gt;sys </span><br><span class="line">Enter system view, return user view with Ctrl+Z.</span><br><span class="line">[Huawei]sys LWS4</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/18/web-HCL5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/18/web-HCL5/" class="post-title-link" itemprop="url">STP及VRRP配置</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-18 16:13:56" itemprop="dateCreated datePublished" datetime="2019-09-18T16:13:56+08:00">2019-09-18</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:09:39" itemprop="dateModified" datetime="2019-09-22T10:09:39+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/“网络”/" itemprop="url" rel="index"><span itemprop="name">“网络”</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h2><p>1、Vrrp<br>2、Stp<br>3、能用DHCP自动获取IP<br>4、能相互ping通</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/18/web-HCL5/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/15/book1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/15/book1/" class="post-title-link" itemprop="url">书单1--平凡的世界</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-15 19:32:39" itemprop="dateCreated datePublished" datetime="2019-09-15T19:32:39+08:00">2019-09-15</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:07:06" itemprop="dateModified" datetime="2019-09-22T10:07:06+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/阅读/" itemprop="url" rel="index"><span itemprop="name">阅读</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=46b93e4b7d1ed21b79c929e39555baf9/14ce36d3d539b600fbdea00ee950352ac65cb773.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <p>很长的一部著作，算是看过最长的了，很接地气的描写，故事一句话概括的话，应该算是：平凡青年的奋斗史。所以是不是应该把书名改为奋斗呢？所以是不是有很多这样的书呢？所以这为什么能让那么多人为之热血呢？我是带着崇拜并质疑的心态来阅读的，似乎没有能迅速找到答案，所以我便闭卷考试似的来回忆，梳理，总结，感悟，看能不能找到答案。<br>回忆三本书的故事，主人公应该是孙家一行人，衍生出来的左右旁支，亲朋好友也生存于其中；应该是黄土高原的背景，时间开始是三年自然灾害之后历时文革，改革开放这样的时间段，孙家算是几代贫农，但为人忠厚，在这样的村子里和很多贫下中农一样的活着，但是这样的孙玉厚，当家人，有着不一样的眼光，就是培养了自己的弟弟和两子一女上学，弟弟 后来成为了村里的党政管理人员，但对大哥确实不够感恩。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/15/book1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/12/web-HCL3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/12/web-HCL3/" class="post-title-link" itemprop="url">HCL配置(三)–-DHCP配置</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-12 15:42:43" itemprop="dateCreated datePublished" datetime="2019-09-12T15:42:43+08:00">2019-09-12</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:09:19" itemprop="dateModified" datetime="2019-09-22T10:09:19+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/华三/" itemprop="url" rel="index"><span itemprop="name">华三</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.8/img/banner/banner1.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <h1 id="HCL配置-三-–-DHCP配置"><a href="#HCL配置-三-–-DHCP配置" class="headerlink" title="HCL配置(三)–-DHCP配置"></a><font color="red">HCL配置(三)–-DHCP配置</font></h1><h2 id="一、任务"><a href="#一、任务" class="headerlink" title="一、任务"></a>一、任务</h2><blockquote>
-<p>在实验二的基础上(VLAN10、20、30、40内的主机之间互ping成功)实现用DHCP给各vlan内主机自动分配地址</p>
+<blockquote>
+<p>删除提示信息</p>
 </blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/12/web-HCL3/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[LWS4]un in en</span><br><span class="line">Info: Information center is disabled.</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/11/web-HCL2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/11/web-HCL2/" class="post-title-link" itemprop="url">HCL配置(二)--VLAN间通信</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-11 18:06:05" itemprop="dateCreated datePublished" datetime="2019-09-11T18:06:05+08:00">2019-09-11</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:09:08" itemprop="dateModified" datetime="2019-09-22T10:09:08+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/华三/" itemprop="url" rel="index"><span itemprop="name">华三</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <h1 id="HCL配置-二-–VLAN间通信"><a href="#HCL配置-二-–VLAN间通信" class="headerlink" title="HCL配置(二)–VLAN间通信"></a><font color="red">HCL配置(二)–VLAN间通信</font></h1><h2 id="一、任务"><a href="#一、任务" class="headerlink" title="一、任务"></a><font color="orange">一、任务</font></h2><blockquote>
-<p>Vlan间通信：<br>VLAN10、20、30、40内的主机之间互ping成功</p>
+<blockquote>
+<p>创建VLAN</p>
 </blockquote>
-<h2 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a><font color="orange">二、配置</font></h2><h3 id="一-通过三层交换机使用SVI实现通信"><a href="#一-通过三层交换机使用SVI实现通信" class="headerlink" title="(一)通过三层交换机使用SVI实现通信"></a><font color="pink">(一)通过三层交换机使用SVI实现通信</font></h3>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/11/web-HCL2/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[LWS4]vlan 10</span><br><span class="line">[LWS4-vlan10]vlan 20</span><br><span class="line">[LWS4-vlan20]quit</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/09/web-HCL1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/09/web-HCL1/" class="post-title-link" itemprop="url">HCL配置(一)--ping通及Telnet</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-09 21:54:19" itemprop="dateCreated datePublished" datetime="2019-09-09T21:54:19+08:00">2019-09-09</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:08:56" itemprop="dateModified" datetime="2019-09-22T10:08:56+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/华三/" itemprop="url" rel="index"><span itemprop="name">华三</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg" itemprop="contentUrl">
-            
-          
-
-          </div>
-        </div>
-          <h1 id="HCL配置-一-–PCping通路由器及HostTelnet路由器"><a href="#HCL配置-一-–PCping通路由器及HostTelnet路由器" class="headerlink" title="HCL配置(一)–PCping通路由器及HostTelnet路由器"></a><font color="red">HCL配置(一)–PCping通路由器及HostTelnet路由器</font></h1><h2 id="一、任务"><a href="#一、任务" class="headerlink" title="一、任务"></a><font color="orange">一、任务</font></h2><blockquote>
-<ul>
-<li>命名R、2S为自己姓名首字母</li>
-<li>给设备配置时间</li>
-<li>PC能够Ping通R</li>
-<li>Host能telnet路由器</li>
-</ul>
+<blockquote>
+<p>接口配置</p>
 </blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/09/web-HCL1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[LWS4]int e0/0/3</span><br><span class="line">[LWS4-Ethernet0/0/3]un sh</span><br><span class="line">Info: Interface Ethernet0/0/3 is not shutdown.</span><br><span class="line">[LWS4-Ethernet0/0/3]port link-t a</span><br><span class="line">[LWS4-Ethernet0/0/3]port de vlan 10</span><br><span class="line">[LWS4-Ethernet0/0/3]int e0/0/4</span><br><span class="line">[LWS4-Ethernet0/0/4]un sh</span><br><span class="line">Info: Interface Ethernet0/0/4 is not shutdown.</span><br><span class="line">[LWS4-Ethernet0/0/4]port link-t a</span><br><span class="line">[LWS4-Ethernet0/0/4]port de vlan 10</span><br><span class="line">[LWS4-Ethernet0/0/4]int e0/0/1</span><br><span class="line">[LWS4-Ethernet0/0/1]un sh</span><br><span class="line">Info: Interface Ethernet0/0/1 is not shutdown.</span><br><span class="line">[LWS4-Ethernet0/0/1]port link-t t</span><br><span class="line">[LWS4-Ethernet0/0/1]port t allow vlan all</span><br><span class="line">[LWS4-Ethernet0/0/1]int e0/0/2</span><br><span class="line">[LWS4-Ethernet0/0/2]un sh</span><br><span class="line">Info: Interface Ethernet0/0/2 is not shutdown.</span><br><span class="line">[LWS4-Ethernet0/0/2]port link-t t</span><br><span class="line">[LWS4-Ethernet0/0/2]port t allow vlan all</span><br><span class="line">[LWS4-Ethernet0/0/2]quit</span><br><span class="line">[LWS4]stp mode stp</span><br><span class="line">Info: This operation may take a few seconds. Please wait for a moment...done.</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>保存配置</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[LWS4]quit</span><br><span class="line">&lt;LWS4&gt;save</span><br><span class="line">The current configuration will be written to the device.</span><br><span class="line">Are you sure to continue?[Y/N]y</span><br><span class="line">Info: Please input the file name ( *.cfg, *.zip ) [vrpcfg.zip]:</span><br><span class="line">Now saving the current configuration to the slot 0.</span><br><span class="line">Save the configuration successfully.</span><br></pre></td></tr></table></figure>
+
+<h3 id="５、S５"><a href="#５、S５" class="headerlink" title="５、S５"></a>５、S５</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;Huawei&gt;sys</span><br><span class="line">Enter system view, return user view with Ctrl+Z.</span><br><span class="line">[Huawei]sys LWS5</span><br><span class="line">[LWS5]un in en</span><br><span class="line">Info: Information center is disabled.</span><br><span class="line">[LWS5]vlan 30</span><br><span class="line">[LWS5-vlan30]vlan 40</span><br><span class="line">[LWS5-vlan40]quit</span><br><span class="line">[LWS5]int e0/0/3</span><br><span class="line">[LWS5-Ethernet0/0/3]un sh</span><br><span class="line">Info: Interface Ethernet0/0/3 is not shutdown.</span><br><span class="line">[LWS5-Ethernet0/0/3]port link-t a</span><br><span class="line">[LWS5-Ethernet0/0/3]port de vlan 30</span><br><span class="line">[LWS5-Ethernet0/0/3]int e0/0/4</span><br><span class="line">[LWS5-Ethernet0/0/4]un sh</span><br><span class="line">Info: Interface Ethernet0/0/4 is not shutdown.</span><br><span class="line">[LWS5-Ethernet0/0/4]port link-t a</span><br><span class="line">[LWS5-Ethernet0/0/4]port de vlan 40</span><br><span class="line">[LWS5-Ethernet0/0/4]int e0/0/1</span><br><span class="line">[LWS5-Ethernet0/0/1]un sh</span><br><span class="line">Info: Interface Ethernet0/0/1 is not shutdown.</span><br><span class="line">[LWS5-Ethernet0/0/1]port link-t t</span><br><span class="line">[LWS5-Ethernet0/0/1]port t allow vlan all</span><br><span class="line">[LWS5-Ethernet0/0/1]int e0/0/2</span><br><span class="line">[LWS5-Ethernet0/0/2]un sh</span><br><span class="line">Info: Interface Ethernet0/0/2 is not shutdown.</span><br><span class="line">[LWS5-Ethernet0/0/2]port link-t t</span><br><span class="line">[LWS5-Ethernet0/0/2]port t allow vlan all</span><br><span class="line">[LWS5-Ethernet0/0/2]quit</span><br><span class="line">[LWS5]stp mode stp</span><br><span class="line">Info: This operation may take a few seconds. Please wait for a moment...done.</span><br></pre></td></tr></table></figure>
+
+<h3 id="６、S６"><a href="#６、S６" class="headerlink" title="６、S６"></a>６、S６</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;Huawei&gt;sys</span><br><span class="line">Enter system view, return user view with Ctrl+Z.</span><br><span class="line">[Huawei]un in en</span><br><span class="line">Info: Information center is disabled.</span><br><span class="line">[Huawei]sys LWS6</span><br><span class="line">[LWS6]vlan 50</span><br><span class="line">[LWS6-vlan50]vlan 60</span><br><span class="line">[LWS6-vlan60]quit</span><br><span class="line">[LWS6]int e0/0/2</span><br><span class="line">[LWS6-Ethernet0/0/2]un sh</span><br><span class="line">Info: Interface Ethernet0/0/2 is not shutdown.</span><br><span class="line">[LWS6-Ethernet0/0/2]port link-t a</span><br><span class="line">[LWS6-Ethernet0/0/2]port de vlan 50</span><br><span class="line">[LWS6-Ethernet0/0/2]int e0/0/3</span><br><span class="line">[LWS6-Ethernet0/0/3]un sh</span><br><span class="line">Info: Interface Ethernet0/0/3 is not shutdown.</span><br><span class="line">[LWS6-Ethernet0/0/3]port link-t a</span><br><span class="line">[LWS6-Ethernet0/0/3]port de vlan 60</span><br><span class="line">[LWS6-Ethernet0/0/3]int e0/0/1</span><br><span class="line">[LWS6-Ethernet0/0/1]un sh</span><br><span class="line">Info: Interface Ethernet0/0/1 is not shutdown.</span><br><span class="line">[LWS6-Ethernet0/0/1]port link-t t</span><br><span class="line">[LWS6-Ethernet0/0/1]port t allow vlan all</span><br><span class="line">[LWS6-Ethernet0/0/1]quit</span><br></pre></td></tr></table></figure>
+
+<h3 id="７、S１"><a href="#７、S１" class="headerlink" title="７、S１"></a>７、S１</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;Huawei&gt;sys</span><br><span class="line">Enter system view, return user view with Ctrl+Z.</span><br><span class="line">[Huawei]un in en</span><br><span class="line">Info: Information center is disabled.</span><br><span class="line">[Huawei]sys LWS1</span><br><span class="line"></span><br><span class="line">[LWS1]vlan 10</span><br><span class="line">[LWS1-vlan10]vlan 20</span><br><span class="line">[LWS1-vlan20]vlan 30</span><br><span class="line">[LWS1-vlan30]vlan 40</span><br><span class="line">[LWS1-vlan40]quit</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[LWS1]vlan 70</span><br><span class="line">[LWS1-vlan70]quit</span><br><span class="line">[LWS1]int g0/0/1</span><br><span class="line">[LWS1-GigabitEthernet0/0/1]un sh</span><br><span class="line">Info: Interface GigabitEthernet0/0/1 is not shutdown.</span><br><span class="line">[LWS1-GigabitEthernet0/0/1]port link-t a</span><br><span class="line">[LWS1-GigabitEthernet0/0/1]port de vlan 70</span><br><span class="line">[LWS1-GigabitEthernet0/0/1]int vlan 70</span><br><span class="line">[LWS1-Vlanif70]ip add 192.168.70.253 24</span><br><span class="line">[LWS1-Vlanif70]quit</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[LWS1]int g0/0/2</span><br><span class="line">[LWS1-GigabitEthernet0/0/2]un sh</span><br><span class="line">Info: Interface GigabitEthernet0/0/2 is not shutdown.</span><br><span class="line">[LWS1-GigabitEthernet0/0/2]port link-t t</span><br><span class="line">[LWS1-GigabitEthernet0/0/2]port t allow vlan all</span><br><span class="line">[LWS1-GigabitEthernet0/0/2]int g0/0/3</span><br><span class="line">[LWS1-GigabitEthernet0/0/3]un sh</span><br><span class="line">Info: Interface GigabitEthernet0/0/3 is not shutdown.</span><br><span class="line">[LWS1-GigabitEthernet0/0/3]port link-t t</span><br><span class="line">[LWS1-GigabitEthernet0/0/3]port t allow vlan all</span><br><span class="line">[LWS1-GigabitEthernet0/0/3]int g0/0/4</span><br><span class="line">[LWS1-GigabitEthernet0/0/4]un sh</span><br><span class="line">Info: Interface GigabitEthernet0/0/4 is not shutdown.</span><br><span class="line">[LWS1-GigabitEthernet0/0/4]port link-t t</span><br><span class="line">[LWS1-GigabitEthernet0/0/4]port t allow vlan all</span><br><span class="line">[LWS1-GigabitEthernet0/0/4]quit</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> stp</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[LWS1]stp mode stp</span><br><span class="line">Info: This operation may take a few seconds. Please wait for a moment...done.</span><br><span class="line">[LWS1]stp prio 0</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>VLAN的IP及VRRP</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[LWS1]int vlan 10</span><br><span class="line">[LWS1-Vlanif10]ip add 192.168.10.253 255.255.255.0</span><br><span class="line">[LWS1-Vlanif10]vrrp vrid 10 virtual-ip 192.168.10.1</span><br><span class="line">[LWS1-Vlanif10]vrrp vrid 10 prio 120</span><br><span class="line">[LWS1-Vlanif10]int vlan 20</span><br><span class="line">[LWS1-Vlanif20]ip add 192.168.20.253 255.255.255.0</span><br><span class="line">[LWS1-Vlanif20]vrrp vrid 20 vi 192.168.20.1</span><br><span class="line">[LWS1-Vlanif20]vrrp vrid 20 prio 120</span><br><span class="line">[LWS1-Vlanif20]int vlan 30</span><br><span class="line">[LWS1-Vlanif30]ip add 192.168.30.253 255.255.255.0</span><br><span class="line">[LWS1-Vlanif30]vrrp vrid 30 vi 192.168.30.1</span><br><span class="line">[LWS1-Vlanif30]int vlan 40</span><br><span class="line">[LWS1-Vlanif40]ip add 192.168.40.253 255.255.255.0</span><br><span class="line">[LWS1-Vlanif40]vrrp vrid 40 vi 192.168.40.1</span><br><span class="line">[LWS1-Vlanif40]quit</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> S1是VLAN10和VLAN20主R，设置接口监听，与路由器连接的接口有问题，则优先级降30，让S2为主R</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[LWS1]int vlan 10</span><br><span class="line">[LWS1-Vlanif10]vrrp vrid 10 track int g0/0/1 reduce 30</span><br><span class="line">[LWS1-Vlanif10]int vlan 20</span><br><span class="line">[LWS1-Vlanif20]vrrp vrid 20 track int g0/0/1 reduce 30</span><br><span class="line">[LWS1-Vlanif20]quit</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>RIP,可以先用<code>dis ip int brief</code>查看所有IP，然后添加</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[LWS1]rip 1</span><br><span class="line">[LWS1-rip-1]network 192.168.10.0</span><br><span class="line">[LWS1-rip-1]network 192.168.20.0</span><br><span class="line">[LWS1-rip-1]network 192.168.30.0</span><br><span class="line">[LWS1-rip-1]network 192.168.40.0</span><br><span class="line">[LWS1-rip-1]network 192.168.70.0</span><br><span class="line">[LWS1-rip-1]quit</span><br><span class="line">[LWS1]quit</span><br></pre></td></tr></table></figure>
+
+<h3 id="８、S２"><a href="#８、S２" class="headerlink" title="８、S２"></a>８、S２</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&lt;Huawei&gt;sys</span><br><span class="line">Enter system view, return user view with Ctrl+Z.</span><br><span class="line">[Huawei]un in en</span><br><span class="line">Info: Information center is disabled.</span><br><span class="line">[Huawei]sys LWS2</span><br><span class="line">[LWS2]int g0/0/2</span><br><span class="line">[LWS2-GigabitEthernet0/0/2]un sh</span><br><span class="line">Info: Interface GigabitEthernet0/0/2 is not shutdown.</span><br><span class="line">[LWS2-GigabitEthernet0/0/2]port link-t t</span><br><span class="line">[LWS2-GigabitEthernet0/0/2]port t allow vlan all</span><br><span class="line">[LWS2-GigabitEthernet0/0/2]int g0/0/3</span><br><span class="line">[LWS2-GigabitEthernet0/0/3]un sh</span><br><span class="line">Info: Interface GigabitEthernet0/0/3 is not shutdown.</span><br><span class="line">[LWS2-GigabitEthernet0/0/3]port link-t t</span><br><span class="line">[LWS2-GigabitEthernet0/0/3]port t allow vlan all</span><br><span class="line">[LWS2-GigabitEthernet0/0/3]int g0/0/4</span><br><span class="line">[LWS2-GigabitEthernet0/0/4]un sh</span><br><span class="line">Info: Interface GigabitEthernet0/0/4 is not shutdown.</span><br><span class="line">[LWS2-GigabitEthernet0/0/4]port link-t t</span><br><span class="line">[LWS2-GigabitEthernet0/0/4]port t allow vlan all</span><br><span class="line">[LWS2-GigabitEthernet0/0/4]quit</span><br><span class="line"></span><br><span class="line">[LWS2]vlan 10</span><br><span class="line">[LWS2-vlan10]vlan 20</span><br><span class="line">[LWS2-vlan20]vlan 30</span><br><span class="line">[LWS2-vlan30]vlan 40</span><br><span class="line">[LWS2-vlan40]quit</span><br><span class="line"></span><br><span class="line">[LWS2]vlan 80</span><br><span class="line">[LWS2-vlan80]quit</span><br><span class="line">[LWS2]int g0/0/1</span><br><span class="line">[LWS2-GigabitEthernet0/0/1]un sh</span><br><span class="line">Info: Interface GigabitEthernet0/0/1 is not shutdown.</span><br><span class="line">[LWS2-GigabitEthernet0/0/1]port link-t a</span><br><span class="line">[LWS2-GigabitEthernet0/0/1]port de vlan 80</span><br><span class="line">[LWS2-GigabitEthernet0/0/1]quit</span><br><span class="line">[LWS2]int vlan 80</span><br><span class="line">[LWS2-Vlanif80]ip add 192.168.80.254 24</span><br><span class="line">[LWS2-Vlanif80]quit</span><br><span class="line"></span><br><span class="line">[LWS2]int vlan 10</span><br><span class="line">[LWS2-Vlanif10]ip add 192.168.10.254 255.255.255.0</span><br><span class="line">[LWS2-Vlanif10]vrrp vrid 10 vi 192.168.10.1</span><br><span class="line">[LWS2-Vlanif10]int vlan 20</span><br><span class="line">[LWS2-Vlanif20]ip add 192.168.20.254 255.255.255.0</span><br><span class="line">[LWS2-Vlanif20]vrrp vrid 20 vi 192.168.20.1</span><br><span class="line">[LWS2-Vlanif20]int vlan 30</span><br><span class="line">[LWS2-Vlanif30]ip add 192.168.30.254 255.255.255.0</span><br><span class="line">[LWS2-Vlanif30]vrrp vrid 30 vi 192.168.30.1</span><br><span class="line">[LWS2-Vlanif30]vrrp vrid 30 prio 120</span><br><span class="line">[LWS2-Vlanif30]int vlan 40</span><br><span class="line">[LWS2-Vlanif40]ip add 192.168.40.254 24</span><br><span class="line">[LWS2-Vlanif40]vrrp vrid 40 vi 192.168.40.1</span><br><span class="line">[LWS2-Vlanif40]vrrp vrid 40 prio 120</span><br><span class="line">[LWS2-Vlanif40]quit</span><br><span class="line">[LWS2]stp mode stp</span><br><span class="line">Info: This operation may take a few seconds. Please wait for a moment...done.</span><br><span class="line">[LWS2]stp prio 4096</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[LWS2]rip 1</span><br><span class="line">[LWS2-rip-1]net 192.168.10.0</span><br><span class="line">[LWS2-rip-1]net 192.168.20.0</span><br><span class="line">[LWS2-rip-1]net 192.168.30.0</span><br><span class="line">[LWS2-rip-1]net 192.168.40.0</span><br><span class="line">[LWS2-rip-1]net 192.168.80.0</span><br><span class="line">[LWS2-rip-1]quit</span><br></pre></td></tr></table></figure>
+
+<h3 id="９、S３"><a href="#９、S３" class="headerlink" title="９、S３"></a>９、S３</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;Huawei&gt;sys </span><br><span class="line">Enter system view, return user view with Ctrl+Z.</span><br><span class="line">[Huawei]un in en</span><br><span class="line">Info: Information center is disabled.</span><br><span class="line">[Huawei]sys LWS3</span><br><span class="line">[LWS3]vlan 50</span><br><span class="line">[LWS3-vlan50]vlan 60</span><br><span class="line">[LWS3-vlan60]vlan 90</span><br><span class="line">[LWS3-vlan90]quit</span><br><span class="line">[LWS3]int g0/0/2</span><br><span class="line">[LWS3-GigabitEthernet0/0/2]un sh</span><br><span class="line">Info: Interface GigabitEthernet0/0/2 is not shutdown.</span><br><span class="line">[LWS3-GigabitEthernet0/0/2]port link-t t</span><br><span class="line">[LWS3-GigabitEthernet0/0/2]port t allow vlan all</span><br><span class="line">[LWS3-GigabitEthernet0/0/2]int g0/0/1</span><br><span class="line">[LWS3-GigabitEthernet0/0/1]un sh</span><br><span class="line">Info: Interface GigabitEthernet0/0/1 is not shutdown.</span><br><span class="line">[LWS3-GigabitEthernet0/0/1]port link-t a</span><br><span class="line">[LWS3-GigabitEthernet0/0/1]port de vlan 90</span><br><span class="line">[LWS3-GigabitEthernet0/0/1]quit</span><br><span class="line">[LWS3]int vlan 50</span><br><span class="line">[LWS3-Vlanif50]ip add 192.168.50.1 24</span><br><span class="line">[LWS3-Vlanif50]int vlan 60</span><br><span class="line">[LWS3-Vlanif60]ip add 192.168.60.1 24</span><br><span class="line">[LWS3-Vlanif60]int vlan 90</span><br><span class="line">[LWS3-Vlanif90]ip add 192.168.90.1 24</span><br><span class="line">[LWS3-Vlanif90]quit</span><br><span class="line"></span><br><span class="line">[LWS3]dhcp en</span><br><span class="line">[LWS3]ip pool vlan50</span><br><span class="line">Info:It&apos;s successful to create an IP address pool.</span><br><span class="line">[LWS3-ip-pool-vlan50]gateway-list 192.168.50.1</span><br><span class="line">[LWS3-ip-pool-vlan50]net 192.168.50.0 mask 255.255.255.0</span><br><span class="line">[LWS3-ip-pool-vlan50]quit</span><br><span class="line">[LWS3]ip pool vlan60</span><br><span class="line">Info:It&apos;s successful to create an IP address pool.</span><br><span class="line">[LWS3-ip-pool-vlan60]gateway-list 192.168.60.1</span><br><span class="line">[LWS3-ip-pool-vlan60]net 192.168.60.0 mask 255.255.255.0</span><br><span class="line">[LWS3-ip-pool-vlan60]quit</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[LWS3]rip 1</span><br><span class="line">[LWS3-rip-1]net 192.168.50.0</span><br><span class="line">[LWS3-rip-1]net 192.168.60.0</span><br><span class="line">[LWS3-rip-1]net 192.168.90.0</span><br><span class="line">[LWS3-rip-1]quit</span><br></pre></td></tr></table></figure>
+
+<h3 id="１０、R１"><a href="#１０、R１" class="headerlink" title="１０、Ｒ１"></a>１０、Ｒ１</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;Huawei&gt;sys</span><br><span class="line">Enter system view, return user view with Ctrl+Z.</span><br><span class="line">[Huawei]un in en</span><br><span class="line">Info: Information center is disabled.</span><br><span class="line">[Huawei]sys LWR1</span><br><span class="line">[LWR1]int e0/0/0</span><br><span class="line">[LWR1-Ethernet0/0/0]ip add 192.168.70.50 24</span><br><span class="line">[LWR1-Ethernet0/0/0]int e0/0/1</span><br><span class="line">[LWR1-Ethernet0/0/1]ip add 192.168.80.50 24</span><br><span class="line">[LWR1-Ethernet0/0/1]int g0/0/0</span><br><span class="line">[LWR1-GigabitEthernet0/0/0]ip add 192.168.100.50 24</span><br><span class="line">[LWR1-GigabitEthernet0/0/0]quit</span><br><span class="line"></span><br><span class="line">[LWR1]rip 1</span><br><span class="line">[LWR1-rip-1]net 192.168.70.0</span><br><span class="line">[LWR1-rip-1]net 192.168.80.0</span><br><span class="line">[LWR1-rip-1]net 192.168.100.0</span><br><span class="line">[LWR1-rip-1]quit</span><br></pre></td></tr></table></figure>
+
+<h3 id="１１、R２"><a href="#１１、R２" class="headerlink" title="１１、Ｒ２"></a>１１、Ｒ２</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;Huawei&gt;sys</span><br><span class="line">Enter system view, return user view with Ctrl+Z.</span><br><span class="line">[Huawei]un in en</span><br><span class="line">Info: Information center is disabled.</span><br><span class="line">[Huawei]int e0/0/0</span><br><span class="line">[Huawei-Ethernet0/0/0]ip add 192.168.100.51 24</span><br><span class="line">[Huawei-Ethernet0/0/0]int e0/0/1</span><br><span class="line">[Huawei-Ethernet0/0/1]ip add 192.168.110.51 24</span><br><span class="line">[Huawei-Ethernet0/0/1]quit</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[Huawei]rip 1</span><br><span class="line">[Huawei-rip-1]net 192.168.100.0</span><br><span class="line">[Huawei-rip-1]net 192.168.110.0</span><br><span class="line">[Huawei-rip-1]quit</span><br></pre></td></tr></table></figure>
+
+<h3 id="１２、R３"><a href="#１２、R３" class="headerlink" title="１２、Ｒ３"></a>１２、Ｒ３</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;Huawei&gt;sys</span><br><span class="line">Enter system view, return user view with Ctrl+Z.</span><br><span class="line">[Huawei]un in en</span><br><span class="line">Info: Information center is disabled.</span><br><span class="line">[Huawei]sys LWR3</span><br><span class="line">[LWR3]int e0/0/0</span><br><span class="line">[LWR3-Ethernet0/0/0]ip add 192.168.110.50 24</span><br><span class="line">[LWR3-Ethernet0/0/0]int e0/0/1</span><br><span class="line">[LWR3-Ethernet0/0/1]ip add 192.168.90.50 24</span><br><span class="line">[LWR3-Ethernet0/0/1]quit</span><br><span class="line"></span><br><span class="line">[LWR3]rip 1</span><br><span class="line">[LWR3-rip-1]net 192.168.90.0</span><br><span class="line">[LWR3-rip-1]net 192.168.110.0</span><br><span class="line">[LWR3-rip-1]quit</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、测试"><a href="#三、测试" class="headerlink" title="三、测试"></a>三、测试</h2><blockquote>
+<p>PC互ping</p>
+</blockquote>
+<p><img alt data-src="https://cdn.jsdelivr.net/gh/wallleap/cdn@2.1/img/pic/web-HCL6/pic4.png"></p>
+<blockquote>
+<p>S4或S5</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dis stp brief</span><br></pre></td></tr></table></figure>
+
+<p><img alt data-src="https://cdn.jsdelivr.net/gh/wallleap/cdn@2.1/img/pic/web-HCL6/pic5.png"></p>
+<blockquote>
+<p>S1或S2</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dis vrrp brief</span><br></pre></td></tr></table></figure>
+
+<p>接着<code>shutdown</code>S1的上层端口<br><img alt data-src="https://cdn.jsdelivr.net/gh/wallleap/cdn@2.1/img/pic/web-HCL6/pic6.png"><br>Master变为backup</p>
+
     </div>
 
     
     
     
-      <footer class="post-footer">
-          <div class="post-eof"></div>
+
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+      <div style="text-align:center;color: #ccc;font-size:14px;"> 
+        <p id="div-border-left-red">
+        <b>本文基于<a target="_blank" title="Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" href="http://creativecommons.org/licenses/by-sa/4.0/"> 知识共享署名-相同方式共享 4.0 </a>国际许可协议发布</b><br/>
+          <span>
+          <b>本文地址：</b><a href="/2019/09/19/web-HCL6/" title="RIP配置">https://wallleap.top/2019/09/19/web-HCL6/</a><br/><b>转载请注明出处，谢谢！</b>
+          </span>
+        </p>
+      </div>
         
-      </footer>
-
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/09/09/web-HCL0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/09/web-HCL0/" class="post-title-link" itemprop="url">HCL的安装和使用</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-09 21:34:37" itemprop="dateCreated datePublished" datetime="2019-09-09T21:34:37+08:00">2019-09-09</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:08:40" itemprop="dateModified" datetime="2019-09-22T10:08:40+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/华三/" itemprop="url" rel="index"><span itemprop="name">华三</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://cdn.jsdelivr.net/gh/wallleap/cdn@1.7/img/banner/banner1.jpg" itemprop="contentUrl">
+
+      <footer class="post-footer">
+          
             
           
-
+          <div class="post-tags">
+            
+              <a href="/tags/eNsp/" rel="tag"><i class="fa fa-tag"></i> eNsp</a>
+            
+              <a href="/tags/RIP/" rel="tag"><i class="fa fa-tag"></i> RIP</a>
+            
           </div>
-        </div>
-          <h2 id="HCL的安装"><a href="#HCL的安装" class="headerlink" title="HCL的安装"></a><font color="red">HCL的安装</font></h2>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/09/web-HCL0/#more" rel="contents">
-                Read more &raquo;
-              </a>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/09/19/hello-world/" rel="next" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+              
             </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
+            <span class="post-nav-divider"></span>
 
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://wallleap.top/2019/08/28/DataStructure1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="luwang">
-      <meta itemprop="description" content="Luwang's Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wallleap">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/28/DataStructure1/" class="post-title-link" itemprop="url">数据结构(1)-绪论</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
+            <div class="post-nav-prev post-nav-item">
               
-                
-              
-
-              <time title="Created: 2019-08-28 22:12:47" itemprop="dateCreated datePublished" datetime="2019-08-28T22:12:47+08:00">2019-08-28</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-22 10:07:29" itemprop="dateModified" datetime="2019-09-22T10:07:29+08:00">2019-09-22</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编程/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="post-gallery-row">
-              <img src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" itemprop="contentUrl">
-            
-          
-
+            </div>
           </div>
-        </div>
-          数据结构预备知识
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/28/DataStructure1/">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
         
       </footer>
+    
 
   </div>
   
@@ -1470,13 +572,7 @@
   
   </article>
 
-    
   </div>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
 
 
           </div>
@@ -1495,6 +591,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -1507,6 +608,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、实验目的"><span class="nav-number">1.</span> <span class="nav-text">一、实验目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、配置"><span class="nav-number">2.</span> <span class="nav-text">二、配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#１、拓扑"><span class="nav-number">2.1.</span> <span class="nav-text">１、拓扑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#２、左边PC"><span class="nav-number">2.2.</span> <span class="nav-text">２、左边PC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#３、右边PC"><span class="nav-number">2.3.</span> <span class="nav-text">３、右边PC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#４、S４"><span class="nav-number">2.4.</span> <span class="nav-text">４、S４</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#５、S５"><span class="nav-number">2.5.</span> <span class="nav-text">５、S５</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#６、S６"><span class="nav-number">2.6.</span> <span class="nav-text">６、S６</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#７、S１"><span class="nav-number">2.7.</span> <span class="nav-text">７、S１</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#８、S２"><span class="nav-number">2.8.</span> <span class="nav-text">８、S２</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#９、S３"><span class="nav-number">2.9.</span> <span class="nav-text">９、S３</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#１０、R１"><span class="nav-number">2.10.</span> <span class="nav-text">１０、Ｒ１</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#１１、R２"><span class="nav-number">2.11.</span> <span class="nav-text">１１、Ｒ２</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#１２、R３"><span class="nav-number">2.12.</span> <span class="nav-text">１２、Ｒ３</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、测试"><span class="nav-number">3.</span> <span class="nav-text">三、测试</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
